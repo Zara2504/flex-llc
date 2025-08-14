@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flex LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+body {
+  margin: 0;
+  font-family: serif;
+  font-size: 16px;
+  background-image: url('background.jpg.jpg'); 
+  background-size: cover;    
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  line-height: 1.6;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: rgb(244, 241, 241);
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.left-block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+.marquee-container {
+  overflow: hidden;
+  max-width: 400px;
+}
+
+marquee {
+  font-size: 28px;
+  color: #333;
+  white-space: nowrap;
+  padding: 10px 0;
+}
+
+.main-menu {
+  display: flex;
+  gap: 90px;
+  margin-left: 50px;
+}
+
+.main-menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.main-menu a:hover {
+  color: rgb(137, 220, 244);
+}
+
+/* Кнопка меню всегда видна */
+.menu-button {
+  font-size: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1001;
+}
+
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: white;
+  border: 1px solid #d8cccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1000;
+}
+
+.dropdown-menu.show {
+  display: flex;
+}
+
+.dropdown-menu a {
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  color: rgb(255, 255, 255);
+  margin: 20px;
+}
+
+p {
+  font-family: serif;
+  font-size: 25px;
+  padding: 0 20px 40px;
+  color: white;
+  line-height: 1.8;
+}
+
+h2 {
+  font-family: serif;
+  font-size: 32px;
+  color: rgb(43, 96, 231);
+  margin: 20px;  
+}
+
+.section-frame {
+  width: 100%;
+  background-color: rgb(244, 241, 241);
+  height: 250px;
+  margin-top: 10px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.contact-text {
+  font-family: 'Arial', sans-serif;
+  font-size: 17px;
+  color: black;
+  text-align: end;
+  margin-top: 135px;
+  line-height: 1.5;
+  max-width: 70%; 
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+.social-icons a img {
+  width: 40px; 
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.1);
+}
+
+.haqqimizda-block {
+  max-width: 700px;
+  padding: 30px 40px;
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+  font-family: serif;
+  line-height: 2.7;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .main-menu {
+    display: none; /* скрываем меню на телефоне */
+  }
+
+  .haqqimizda-block {
+    padding: 20px;
+    font-size: 18px;
+    line-height: 2;
+  }
+}
+
+@media (min-width: 769px) {
+  .main-menu {
+    display: flex; /* меню ПК */
+  }
+}
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="left-block">
+      <div class="logo">
+        <a href="firstproject.html">
+          <img src="c:\Users\99455\Downloads\6b089827-427d-4a22-952a-175260614c5d-removebg-preview.png" />
+        </a>
+      </div>
+      <div class="marquee-container">
+        <marquee behavior="scroll" direction="right" scrollamount="5">
+          Bizim fərqliliyimiz sizin inkişafınızdır!
+        </marquee>
+      </div>
+    </div>
+
+    <div class="main-menu">
+       <a href="anasehife.html">Ana səhifə</a>
+      <a href="haqqimizda.html">Haqqımızda</a>
+      <a href="xidmetler.html">Xidmətlər</a>
+      <a href="terefdashlar.html">Tərəfdaşlar</a>
+      <a href="elaqe.html">Əlaqə</a>
+    </div>
+
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+    <div class="dropdown-menu" id="menu">
+      <a href="haqqimizda.html">Haqqımızda</a>
+      <a href="xidmetler.html">Xidmətlər</a>
+      <a href="terefdashlar.html">Tərəfdaşlar</a>
+      <a href="musteriler.html">Müştərilər</a>
+      <a href="lahiyeler.html">Lahiyələr</a>
+      <a href="elaqe.html">Əlaqə</a>
+    </div>
+  </div>
+
+  <div class="haqqimizda-block">
+    <h1>Haqqımızda</h1>
+    <p>Azərbaycan Respublikası qanunvericiliyi ilə müəyyən olunan qaydalara müvafiq olaraq təsis edilmiş “FLEX” MMC şirkəti 2019-cu ildən etibarən öz müştərilərinə informasiya texnologiyaları, təhlükəsizlik və telekommunikasiya sahəsində xidmət göstərməyə başlamışdır. Əsas fəaliyyət istiqaməti olaraq İТ (informasiya texnologiyaları) sahəsi və eləcə də təhlükəsizlik avadanlıqlarının satışı, quraşdırılması və texnik dəstək göstərilməsi, web səhifələrin, biznes idarəetmə sistemlərinin və müxtəlif proqram təminatlarının qurulması, tətbiqi və texniki dəstək göstərilməsi, ümumilikdə bu sahələrlə əlaqədar multi fəaliyyət profili müəyyən edilmişdir. Müasir dövrdə ölkəmizdə gedən innovativ reformasiya islahatlarını çox yaxından izləməyə çalışan “FLEX” MMC Azərbaycan Respublikasının qədəm qoyduğu bu inkişaf proseslərinə öz töhvəsini verməklə gələcəkdə dünya bazarına meydan oxuya biləcək bir şirkətə çevrilməyi özünə hədəf seçmişdir. Əsas üstünlüyü müasir texnologiyaların tətbiqi olan şirkətimiz fərdi yanaşma əsasında hər bir müştərisinə individual yanaşaraq çevik və yüksək keyfiyyətli xidmət təqdim etməklə, eyni zamanda müştəri məmnuniyyətini təmin etməyi özünə əsas məqsəd müəyyən etmişdir. Şirkət qarşısında duran əsas hədəf və məqsədlərinə nail olmaq üçün təqdim olunan xidmətlər sahəsində aşağıda qeyd olunan fərqlilikləri yaratmaqla müştərilərinə yüksək ixtisaslı peşəkarlarla xidmət göstərir. Qısa bir vaxt ərzində fəaliyyətə başlamağına baxmayaraq, şirkətimiz bu sahədə bir sıra uğurlu layihələrə imza atmışdır. Bu layihələrin sırasına video-kamera müşahidə (analoq və İP olmaqla) sistemlərinin, lokal şəbəkə, firewall avadanlıqları və server sistemlərinin, sürətli keçid sistemlərinin, nəzarət buraxılış məntəqlərinə şlaqbaum və turniket sistemlərinin, girişə nəzarət məqsədilə üz tanıma (face-recognition) və barmaq izi (finger print) oxuyucuları sistemlərinin, daxili telefoniya (analoq və İP olmaqla) sistemlərinin, müxtəlif təyinatlı dayanacaqlar üçün parking sistemi, eləcə də yanğın təhlükəsizliyi və mühafizə sistemlərinin quraşdırılması, o cümlədən mövcud sistemlərə texniki dəstək xidmətlərinin (outsource - xidməti) göstərilməsi daxildir. Belə ki, şirkətimizin artıq müxtəlif müəssisələr, restoran və tibb müəssisələri ilə də işləmək təcrübəsi vardır. Müxtəlif sahələrdə fəaliyyət göstərən müştərimizin sıralarına ölkənin sayılıb seçilən şirkətləri və eləcə də xarici diplomatik korpusa aid olan səfirliklər daxildir.</p>
+  </div>
+
+  <div class="section-frame">
+    <div class="contact-text">
+      <div style="padding: 10px; border-radius: 5px; color: rgb(0, 0, 0);">
+        © 2025 Copyright FLEX LLC
+      </div>
+    </div>
+    <div class="social-icons">
+       <a href="https://www.linkedin.com/company/flex-mmc/?viewAsMember=true" target="_blank">
+        <img src="logo/vecteezy_linkedin-logo-png-linkedin-icon-transparent-png_18930585_835.png" alt="Linkedin" />
+      </a>
+      <a href="https://www.facebook.com/FLEX.LLC/" target="_blank">
+        <img src="logo/59439.png" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/flex_llc/" target="_blank">
+        <img src="logo/transparent-instagram-logo-image-black-background-white-square-no-1710926252702.webp" alt="İnstagram" />
+    </a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flex LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: serif;
+      font-size: 16px;
+      background-image: url('background3.jpg.jpg'); 
+      background-size: cover;    
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; 
+      line-height: 1.6;
+    }
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: rgb(244, 241, 241);
+      flex-wrap: wrap;
+    }
+
+    .left-block {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .logo img {
+      width: 150px;
+      height: auto;
+    }
+
+    .marquee-container {
+      overflow: hidden;
+      max-width: 400px;
+    }
+
+    marquee {
+      font-size: 28px;
+      color: #333;
+      white-space: nowrap;
+      padding: 10px 0;
+    }
+
+    .main-menu {
+      display: flex;
+      gap: 90px;
+      margin-left: 50px;
+    }
+
+    .main-menu a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+    }
+
+    .main-menu a:hover {
+      color: rgb(137, 220, 244);
+    }
+
+    .menu-button {
+      font-size: 25px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      top: 1px;
+      right: 20px;
+    }
+
+    .dropdown-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      border: 1px solid #d8cccc;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      z-index: 1000;
+    }
+
+    .dropdown-menu.show {
+      display: flex;
+    }
+
+    .dropdown-menu a {
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      color: white;
+      margin: 20px;
+      text-align: center;
+    }
+
+    .section-frame {
+      width: 100%;
+      background-color: rgb(244, 241, 241);
+      height: 200px;
+      margin-top: 10px;
+      padding: 20px 40px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .contact-text {
+      font-family: 'Arial', sans-serif;
+      font-size: 17px;
+      color: black;
+      text-align: end;
+      margin-top: 135px;
+      line-height: 1.5;
+      max-width: 70%;
+    }
+
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .social-icons a img {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .social-icons a img:hover {
+      transform: scale(1.1);
+    }
+
+    .partners-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 30px 10px 60px;
+    }
+
+    .partner-card {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      padding: 20px;
+      width: 200px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    .partner-card:hover {
+      transform: scale(1.05);
+    }
+
+    .partner-card img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="left-block">
+      <div class="logo">
+        <a href="firstproject.html">
+          <img src="c:\Users\99455\Downloads\6b089827-427d-4a22-952a-175260614c5d-removebg-preview.png" />
+        </a>
+      </div>
+      <div class="marquee-container">
+        <marquee behavior="scroll" direction="right" scrollamount="5">
+          Bizim fərqliliyimiz sizin inkişafınızdır!
+        </marquee>
+      </div>
+    </div>
+
+    <div class="main-menu">
+      <a href="anasehife.html">Ana səhifə</a>
+      <a href="haqqimizda.html">Haqqımızda</a>
+      <a href="xidmetler.html">Xidmətlər</a>
+      <a href="terefdashlar.html">Tərəfdaşlar</a>
+      <a href="elaqe.html">Əlaqə</a>
+    </div>
+
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+    <div class="dropdown-menu" id="menu">
+      <a href="haqqimizda.html">Haqqımızda</a>
+      <a href="xidmetler.html">Xidmətlər</a>
+      <a href="terefdashlar.html">Tərəfdaşlar</a>
+      <a href="musteriler.html">Müştərilər</a>
+      <a href="lahiyeler.html">Lahiyələr</a>
+      <a href="elaqe.html">Əlaqə</a>
+    </div>
+  </div>
+
+  <div class="services-container"></div>
+
+  <h1>Müştərilərimiz</h1>
+
+  <div class="partners-grid">
+    <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\5997be7e-1e72-4305-a42b-82822752747a.jpg" alt="Müştəri">
+    </div>
+    <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\2efd04d4-e300-4f63-87dd-b59cbaeb59e8.jpg" alt="Müştəri 2">
+    </div>
+    <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\0e027936-2406-47ac-9e22-62a482a0a9b0.jpg" alt="Tərəfdaş 3">
+    </div>
+    <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\e88f2678-aca5-4454-b61c-8ac5d1c7d51e.jpg" alt="Tərəfdaş 4">
+    </div>
+   <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\fbf53c67-0c0d-43ea-847c-b5ce4c9167f3.jpg" alt="Tərəfdaş 5">
+    </div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\42b2977b-9e19-4854-b4e9-4b95ac278027.jpg" alt="Tərəfdaş 6">
+    </div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\381dc88f-4936-4747-8916-f290c6dc73b5.jpg" alt="Tərəfdaş 7">
+    </div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\16722427-111b-4e64-bac7-d7d9e331ab0c.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\a03ebd5c-6e5f-489f-a740-ae438a160016.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\2c7ee585-6b4a-4362-8c2f-540261ae7261.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\ea3c684c-2812-48dd-9966-f033e6ae22a1.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\2978244e-4929-4626-88c3-a6b8b788e585.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\c31993e5-b9a1-4aa9-ac90-7fc713d17330.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\599645a0-d1a2-4ec7-b3bc-51d470ba3099.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\5b80247f-40a7-4519-8374-2f73069d93df.jpg" alt="Tərəfdaş 15"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\51aa1476-0a55-420d-8584-2e72860402c9.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\44914518-a390-4515-876e-c1d47bfaffe1.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\72121c9a-ba20-4c88-b3a6-a9bc65bfd156.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\415dbbfe-f322-44b1-af28-84991431b391.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\af8677e7-9e8d-4589-8446-6f1ff6872d0c.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\a4783eb9-6b32-42d8-9acf-a1ca1157285d.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\37b87ac1-850e-4aae-b114-17086c32a25e.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\634da2de-eca4-4547-bdb2-2d1e40305864.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\aac1bf00-8a08-48e6-a679-8882c75a351f.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\39980ec4-e2e7-478f-9add-f5cf7016d16b.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\2d2cfa74-7ae5-4be2-a321-0fcef0372bdf.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\feb2ada4-c299-4ea7-9fee-bb5b78be4c56.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\59968b81-7da3-41ec-ad0e-8eba0a8ee2bd.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\5823702f-abe3-4e95-84c7-8a1f39d0bd2e.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\b1f42f49-b392-40ae-bd7c-7f719f0c3566.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\09c44e54-38e2-4bac-a23c-621246561040.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\734461e4-b4fa-43ae-b4dc-77b1d2bd28bc.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\0a16876b-c627-4842-a32b-fac1571577a0.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\fc3d9d93-2563-49d0-99c8-a718c7679d0e.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\e7c43266-a6cf-46d4-8e5e-05dd22179034.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\89a13b61-6318-4431-914b-cf71102739a9.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\64af838d-b205-431e-9ff1-307dff435c26.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\923d8e58-2496-4d68-941b-6682b1c83997.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\2acd1903-ea25-4059-b3fa-b7c5d5dafe00.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\844c325a-1c78-4812-ada0-9f639c989032.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\02651d81-cb16-4740-b991-f7b3139e44c6.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\b5c27dd1-f511-4e66-ae3a-cd7f5af0607a.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\9d1f4b7c-6fd1-4498-a38c-d1f605491192.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\6196357f-88ff-423f-92ae-137fa17f3c85.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\52c4f8c1-ae32-410c-9bd6-cae9482a5d37.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\e91c3c0c-0e54-4bd5-b781-f138de5e1bfe.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\43b0795b-6727-43ab-95aa-270d4fc1295a.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\74051c44-27ed-4b2a-825f-ad5ee76e9507.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\d266bffa-3417-4332-a651-8fe3d9eab243.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\4d5e541f-b768-4f16-a1f5-67ffdb37e8cf.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\c0f2cc79-df96-46fc-9e6b-bd91df5dbae0.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\30402409-bb9a-420b-9a2d-5b22183954a9.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\66bf8f34-fa28-49d7-b469-3f4dcd1a1350.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\50ac3f85-284d-462f-9d14-04fb48927719.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\5b2ca7b6-378b-4bfb-86b6-47a91c60eb7e.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo\0577777f-2a03-453f-a607-f21532546729.jpg" alt="Tərəfdaş 56"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\f268575a-7d0d-4f52-b8b4-4ca10e53649d.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\d9cb02ad-ce1f-4ef5-9dce-4ccc837bf379.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\b2a75f02-959b-4eba-94f1-343dacb19a5d.jpg " alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\6e34d4ab-5f26-4a12-a829-63dbc55b2085.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\7434d68a-9d8b-44c6-ab39-e5cf0c202f01.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\a3fceeda-b6b9-4d29-9e4f-dafb44f77741.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\5154b703-1915-43b7-bdb6-e2c626348f58.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\97b65564-c74e-440d-b48e-65970c5cdb0f.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\00f99106-add8-4003-9179-da9f63cbc2ef.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+       <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\982e6af7-6c81-44ed-9ad8-85ac28da6c23.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+  <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\33105bd3-3568-408b-9505-879adf5d18f1.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\943d84c5-f174-4f42-85c7-bb60ca3a90f4.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\19814a36-8eda-441b-8ad6-d08cccf32c70.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\482f03c9-9e41-4260-aa61-d976a6c3a24a.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\bd7556eb-ee62-40c4-ba96-2fca32d6fd17.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\b493bf54-9131-4ca3-9956-94a039b9e626.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\8fbbf731-5be2-4f61-9550-164f7d3fc793.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\a3a3f23e-177a-4cbf-ba02-c8338c0eb8c2.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\94037a84-6f6d-4162-a2e6-3b96b85b8126.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\4f3b44ba-d5cb-4d69-8488-a69181f5162f.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\88fbf33f-baf6-4a91-94db-e10786a4ae36.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\94447786-5509-463f-b0cd-de4a9433c255.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\1e41f4ef-ab5e-49f2-b987-323bf474c49f.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\a27aa553-30eb-48fd-9abd-46ca0396a5ff.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\faa6635e-9eb7-4c87-a869-dd2d1e0e49ce.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\50bce2c5-5ac8-4910-82ab-a4e9e10423b4.jpg" alt="Tərəfdaş 8"></div>
+     <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\5529de61-24c4-4b4e-9430-6140c61f4aa4.jpg" alt="Tərəfdaş 8"></div>
+ <div class="partner-card">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo 2\11b30ff5-69ef-44c3-8f91-84f2763e1e7f.jpg" alt="Tərəfdaş 8"></div>
+    </div>
+  </div>
+
+  <div class="section-frame">
+    <div class="contact-text">
+      <div style="padding: 10px; border-radius: 5px; color: rgb(0, 0, 0);">
+        © 2025 Copyright FLEX LLC
+      </div>
+    </div>
+
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/company/flex-mmc/?viewAsMember=true" target="_blank">
+        <img src="logo/vecteezy_linkedin-logo-png-linkedin-icon-transparent-png_18930585_835.png" alt="Linkedin" />
+      </a>
+      <a href="https://www.facebook.com/FLEX.LLC/" target="_blank">
+        <img src="logo/59439.png" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/flex_llc/" target="_blank">
+        <img src="logo/transparent-instagram-logo-image-black-background-white-square-no-1710926252702.webp" alt="İnstagram" />
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flex LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: serif;
+      font-size: 16px;
+      background-image: url('backgroundd.jpg.jpg'); 
+      background-size: cover;    
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; 
+      line-height: 1.6;
+      color: #fff;
+    }
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: rgb(244, 241, 241);
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .left-block {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .logo img {
+      width: 150px;
+      height: auto;
+    }
+
+    .marquee-container {
+      overflow: hidden;
+      max-width: 400px;
+    }
+
+    marquee {
+      font-size: 28px;
+      color: #333;
+      white-space: nowrap;
+      padding: 10px 0;
+    }
+
+    .main-menu {
+      display: flex;
+      gap: 50px;
+      margin-left: 50px;
+    }
+
+    .main-menu a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+    }
+
+    .main-menu a:hover {
+      color: rgb(137, 220, 244);
+    }
+
+    .menu-button {
+      font-size: 25px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      z-index: 1001;
+    }
+
+    .dropdown-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      border: 1px solid #d8cccc;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      padding: 10px;
+      z-index: 1000;
+    }
+
+    .dropdown-menu.show {
+      display: flex;
+    }
+
+    .dropdown-menu a {
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+    }
+
+    h1 {
+      font-family: Arial, sans-serif;
+      font-size: 32px;
+      color: white;
+      margin: 0 0 20px 40px;
+      text-align: left;
+    }
+
+    .map-container iframe {
+      width: 70%;
+      height: 350px;
+      margin-left: 206px;
+      margin-top: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      border: none;
+    }
+
+    .info-block {
+      max-width: 500px; 
+      margin: 20px;
+      color: #fff;
+    }
+
+    .icon-text {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 10px 15px;
+      margin-bottom: 25px;
+    }
+
+    .icon-text img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
+
+    .icon-text span {
+      font-size: 20px;
+    }
+
+    .icon-text.vertical {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .icon-text.vertical .row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .section-frame {
+      width: 100%;
+      background-color: rgb(244, 241, 241);
+      height: 249px;
+      margin-top: 10px;
+      padding: 20px 40px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .copyright-text {
+      color: rgb(0,0,0);
+      font-size: 19px;
+    }
+
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .social-icons a img {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .social-icons a img:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .main-menu {
+        display: none;
+      }
+      .map-container iframe {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="left-block">
+      <div class="logo">
+        <a href="firstproject.html">
+          <img src="c:\Users\99455\Downloads\6b089827-427d-4a22-952a-175260614c5d-removebg-preview.png" />
+        </a>
+      </div>
+      <div class="marquee-container">
+        <marquee behavior="scroll" direction="right" scrollamount="5">
+          Bizim fərqliliyimiz sizin inkişafınızdır!
+        </marquee>
+      </div>
+    </div>
+
+    <div class="main-menu">
+      <a href="anasehife.html">Ana səhifə</a>
+      <a href="haqqimizda.html">Haqqımızda</a>
+      <a href="xidmetler.html">Xidmətlər</a>
+      <a href="terefdashlar.html">Tərəfdaşlar</a>
+      <a href="elaqe.html">Əlaqə</a>
+    </div>
+
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+    <div class="dropdown-menu" id="menu">
+      <a href="haqqimizda.html">Haqqımızda</a>
+      <a href="xidmetler.html">Xidmətlər</a>
+      <a href="terefdashlar.html">Tərəfdaşlar</a>
+      <a href="musteriler.html">Müştərilər</a>
+      <a href="lahiyeler.html">Lahiyələr</a>
+      <a href="elaqe.html">Əlaqə</a>
+    </div>
+  </div>
+
+
+  <div class="map-container">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1277.2168489370404!2d49.861351352205205!3d40.41437262383818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403087ff682ce6c9%3A0x4eaf009b2bc30e9!2zMjE5IMaPaG3JmWQgUsmZY8mZYmxpLCBCYWvEsQ!5e0!3m2!1sru!2saz!4v1754555617153!5m2!1sru!2saz">
+    </iframe>
+  </div>
+
+  <h1>Əlaqə</h1>
+  <div class="info-block">
+    <div class="icon-text vertical">
+      <div class="row">
+        <img src="logo/white-phone-icon-png-transparent-9.jpg" alt="Phone Icon" />
+        <span>+994 70 214 86 26</span>
+      </div>
+      <div class="row">
+        <img src="c:\Users\99455\Downloads\WhatsApp Image 2025-08-08 at 14.47.38.jpeg" alt="Mail Icon" />
+        <span>info@flex.az</span>
+      </div>
+      <div class="row">
+        <span>Nərimanov rayonu, MZ Plaza, Ə.Rəcəbli 219, AZ 1075, Bakı/Azərbaycan </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-frame">
+    <div class="contact-text">
+      <p><span class="copyright-text">© 2025 Copyright FLEX LLC</span></p>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/company/flex-mmc/?viewAsMember=true" target="_blank">
+        <img src="logo/vecteezy_linkedin-logo-png-linkedin-icon-transparent-png_18930585_835.png" alt="Linkedin" />
+      </a>
+      <a href="https://www.facebook.com/FLEX.LLC/" target="_blank">
+        <img src="logo/59439.png" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/flex_llc/" target="_blank">
+        <img src="logo/transparent-instagram-logo-image-black-background-white-square-no-1710926252702.webp" alt="İnstagram" />
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

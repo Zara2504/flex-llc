@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flex LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: serif;
+      font-size: 16px;
+      background-image: url('background3.jpg.jpg'); 
+      background-size: cover;    
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; 
+      line-height: 1.6;
+    }
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: rgb(241, 243, 244);
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .left-block {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .logo img {
+      width: 150px;
+      height: auto;
+    }
+
+    .marquee-container {
+      overflow: hidden;
+      max-width: 400px;
+    }
+
+    marquee {
+      font-size: 28px;
+      color: #333;
+      white-space: nowrap;
+      padding: 10px 0;
+    }
+
+    .main-menu {
+      display: flex;
+      gap: 30px;
+      margin-left: 50px;
+    }
+
+    .main-menu a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+    }
+
+    .main-menu a:hover {
+      color: rgb(137, 220, 244);
+    }
+
+    .menu-button {
+      font-size: 25px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: block; /* видна всегда */
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      z-index: 1001;
+    }
+
+    .dropdown-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      border: 1px solid #d8cccc;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      z-index: 1000;
+    }
+
+    .dropdown-menu.show {
+      display: flex;
+    }
+
+    .dropdown-menu a {
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      color: rgb(255, 255, 255);
+      margin: 20px;
+    }
+
+    p {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      padding: 0 20px 10px 20px;
+      color: #333;
+      line-height: 1.8;
+      cursor: pointer;
+      position: relative;
+      padding-left: 25px;
+      user-select: none;
+      max-width: 600px;
+    }
+
+    p::before {
+      position: absolute;
+      left: 5px;
+      color: black;
+    }
+
+    p:hover {
+      color: rgb(137, 220, 244);
+    }
+
+    .service-section {
+      padding: 20px;
+    }
+
+    .service-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #0f5ecd;
+      border-radius: 10px;
+      background-color: rgb(255, 255, 255);
+      padding: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      transition: background 0.3s ease;
+    }
+
+    .service-text {
+      font-size: 18px;
+      color: #333;
+      width: 60%;
+    }
+
+    .service-image {
+      width: 210px;
+      height: 170px;
+      object-fit: cover;
+      display: none;
+    }
+
+    .service-box:hover .service-image {
+      display: block;
+    }
+
+    .section-frame {
+      width: 100%;
+      background-color: rgb(244, 241, 241);
+      height: 200px;
+      margin-top: 10px;
+      padding: 20px 40px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .contact-text {
+      font-family: 'Arial', sans-serif;
+      font-size: 17px;
+      color: black;
+      text-align: end;
+      margin-top: 135px;
+      line-height: 1.5;
+      max-width: 70%;
+    }
+
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .social-icons a img {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .social-icons a img:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .main-menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="left-block">
+      <div class="logo">
+        <a href="firstproject.html">
+           <img src="c:\Users\99455\Downloads\6b089827-427d-4a22-952a-175260614c5d-removebg-preview.png" />
+        </a>
+      </div>
+      <div class="marquee-container">
+        <marquee behavior="scroll" direction="right" scrollamount="5">
+          Bizim fərqliliyimiz sizin inkişafınızdır!
+        </marquee>
+      </div>
+    </div>
+
+    <div class="main-menu">
+       <a href="anasehife.html">Ana səhifə</a>
+      <a href="haqqimizda.html">Haqqımızda</a>
+      <a href="xidmetler.html">Xidmətlər</a>
+      <a href="terefdashlar.html">Tərəfdaşlar</a>
+      <a href="elaqe.html">Əlaqə</a>
+    </div>
+
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+    <div class="dropdown-menu" id="menu">
+      <a href="haqqimizda.html">Haqqımızda</a>
+      <a href="xidmetler.html">Xidmətlər</a>
+      <a href="terefdashlar.html">Tərəfdaşlar</a>
+      <a href="musteriler.html">Müştərilər</a>
+      <a href="lahiyeler.html">Lahiyələr</a>
+      <a href="elaqe.html">Əlaqə</a>
+    </div>
+  </div>
+
+  <h1>Xidmətlərimiz</h1>
+
+
+  
+<div class="service-section">
+  <div class="service-box">
+    <div class="service-text"> Video Kamera Müşahidə Sistemlərinin qurulması (Analoq və ya İP) </div>
+    <img class="service-image" src="https://scontent.fgyd14-1.fna.fbcdn.net/v/t1.6435-9/171664263_931446744352876_7359978742781460404_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=QqSlgUKvEYsQ7kNvwGO9aVX&_nc_oc=AdkhYYtnkq_N7fERWz00HyDvc42qQUfaZeaKoSLXg1XBuDxssRfBm3u3ifpRtnoOPf8&_nc_zt=23&_nc_ht=scontent.fgyd14-1.fna&_nc_gid=nXPYflntGrzNwUuwQxy2cA&oh=00_AfU7ObEeXFwgCKSa6W_lGnBQYl2tbAhaL98GsFTExDvlYw&oe=68BA60D1" alt="Video Kamera" />
+  </div>
+
+  <div class="service-box">
+    <div class="service-text"> Lokal Şəbəkə və Server Sistemlərinin yaradılması </div>
+    <img class="service-image" src="https://scontent.fgyd14-1.fna.fbcdn.net/v/t1.6435-9/172711809_932836650880552_8527552115437280245_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=5ythkDyE2kUQ7kNvwEOyje1&_nc_oc=AdkffwpCgMT2zwGeAvskxnmkHi4SdLTBpzwaJe9nsSA1XYcswpjlxizf81nvS0iN0TY&_nc_zt=23&_nc_ht=scontent.fgyd14-1.fna&_nc_gid=AH98zWl5R7Xi9jrl5qgB-w&oh=00_AfXt-ErGwLH-n1eitE--Xzrlu9m2jBV97uwprFuLdw4BiA&oe=68BA6386" alt="Turniket" />
+  </div>
+
+  <div class="service-box">
+    <div class="service-text"> Çağrı və Növbə Sistemlərinin qurulması</div>
+    <img class="service-image" src="https://scontent.fgyd14-1.fna.fbcdn.net/v/t1.6435-9/175721472_937076790456538_2679374711848448844_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=jn3grgwOn2cQ7kNvwEBosxl&_nc_oc=AdlTtYADNW97u4D776Hlb4yh-Xh9qdfnTJtBnc-t5D5NGkOcFpW7ink3_xdGzqJUYuQ&_nc_zt=23&_nc_ht=scontent.fgyd14-1.fna&_nc_gid=dwxxbg8RWf9BsiuGCh395Q&oh=00_AfXAkTckdTsnsgKxVfkSyxYimVCCrxYT7mex3DgwiUO1cA&oe=68BA7D1B" alt="Domofon" />
+  </div>
+
+  <div class="service-box">
+    <div class="service-text">  Daxili Telefoniya Sisteminin yaradılması (Analoq və ya İP)</div>
+    <img class="service-image" src="https://scontent.fgyd14-1.fna.fbcdn.net/v/t1.6435-9/175801953_936508750513342_5457085005230326708_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=JIbXpesLsJwQ7kNvwFxfJKc&_nc_oc=AdmyTKTwVq4mWXD60XwVbwSaIXXqpwzWaTw8Rtm8nCTpvhfsvq93Mb1dEYQbpOkrhCI&_nc_zt=23&_nc_ht=scontent.fgyd14-1.fna&_nc_gid=inceMVLliNEF7HBtsRCBbQ&oh=00_AfVoP9fejnpUsmBp69M67ULpmo3wP1BZBESKRphlsT65xQ&oe=68BA618E" alt="Siqnalizasiya" />
+  </div>
+
+  <div class="service-box">
+    <div class="service-text"> Bariyer Sistemlərinin (qollu baryeri, yol blokeri, turniket) qurulması</div>
+    <img class="service-image" src="https://scontent.fgyd14-1.fna.fbcdn.net/v/t1.6435-9/174403905_934654080698809_5501527823628784718_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=0W_EKOhNhpIQ7kNvwEuC2B2&_nc_oc=AdnaucsqIArp93Go6QX_NHoTTbmAgtKWrNnzxnXR0rRqynASyXxMmkmILBgpFU8eH04&_nc_zt=23&_nc_ht=scontent.fgyd14-1.fna&_nc_gid=hQgJ425rENnflYXGEHFxyg&oh=00_AfX-bLMEJY_kQtAmnZ4BwuU0BZJpAzuML37AB9la-JFBSQ&oe=68BA7E09" alt="Server" />
+  </div>
+   <div class="service-box">
+    <div class="service-text">  Parking Sistemlərinin yaradıması</div>
+    <img class="service-image" src="https://scontent.fgyd14-1.fna.fbcdn.net/v/t1.6435-9/173497117_933933884104162_8183497408477088186_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=62omy32DprUQ7kNvwHXM5Ko&_nc_oc=Adnm7NwDFJO86vDIGIJolRc46jjJJNwNjPgkcbUz4qLkE1M8lUxR2T5RLcLFg9wNYV0&_nc_zt=23&_nc_ht=scontent.fgyd14-1.fna&_nc_gid=Lkq9vwygNeLgFjBxI6sBFg&oh=00_AfWJFblA2iuvCz3qA6JQRXAJqaVcTe3zKVzhFzkJZRNgpg&oe=68BA5934" alt="Server" />
+  </div>
+   <div class="service-box">
+    <div class="service-text"> Access Control Sistemlərinin (kart oxuyucu, barmaq izi, üz tanıma, RFİD) tətbiqi</div>
+    <img class="service-image" src="https://scontent.fgyd14-1.fna.fbcdn.net/v/t1.6435-9/175149247_935877840576433_457028778226632171_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=2tQ5hU1F2y0Q7kNvwHW7_Fm&_nc_oc=Adkv2WCl0tu4V9lrpGvtZ4GfL1ZUPrRPYpyEehuT8QhKUuGmBpxQjanmgOUhotG5eF4&_nc_zt=23&_nc_ht=scontent.fgyd14-1.fna&_nc_gid=AocfbqedeO7bUVIFD1OszA&oh=00_AfXBfJYDURMFFNiVeEjyUH22GKrzhEvMtaIiBQs7wJDiYg&oe=68BA6B40" alt="Server" />
+  </div>
+   <div class="service-box">
+    <div class="service-text"> Ağıllı Ev Sistemlərinin  yaradılması</div>
+    <img class="service-image" src="https://scontent.fgyd14-1.fna.fbcdn.net/v/t1.6435-9/172326355_931863427644541_2661963314738528100_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=FGkEnZEHHtUQ7kNvwHAV7jA&_nc_oc=AdkX0YqUPHXb1ikUSyAouoKsj3GDm-12OWeok8bO6pIZ7K2zxf2Se1j41LS6oCmhUbs&_nc_zt=23&_nc_ht=scontent.fgyd14-1.fna&_nc_gid=2Mkhds7XCFvrLFYShQCaAA&oh=00_AfWkqG5v9uLeuXWPgMIr5fMqWdii4HdkuAlYJikG8HvcvQ&oe=68BA77B2" alt="Server" />
+  </div>
+   <div class="service-box">
+    <div class="service-text">Yanğın Təhlükəsizliyi və Söndürmə Sistemlərinin qurulması</div>
+    <img class="service-image" src="https://scontent.fgyd14-1.fna.fbcdn.net/v/t1.6435-9/174139670_934107807420103_2516237191460805387_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=kqSAysgzGBMQ7kNvwEXQYcj&_nc_oc=AdllsVDKrl_H6Lk1pws-_hQgdqHYnwAmTNtLkPDqd2Rq7i6IImVTpciyvgQVhI2uvzU&_nc_zt=23&_nc_ht=scontent.fgyd14-1.fna&_nc_gid=jmM69z-RfM2cEedAwaochw&oh=00_AfU6BH4Rv6z9n2zZgHXme-w9qijriO5CByBs3o8viKSa7g&oe=68BA7BE6" alt="Server" />
+  </div>
+   <div class="service-box">
+    <div class="service-text"> Perimetr Təhlükəsizlik və Siqnalizasiya Sistemlərinin qurulması</div>
+    <img class="service-image" src="https://scontent.fgyd14-1.fna.fbcdn.net/v/t1.6435-9/176840090_939971723500378_1844138063822782205_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=BMBcO1XoLjIQ7kNvwFTQuak&_nc_oc=AdnDUAgoYMNLLvWAk1Y8E0nqjRBgshzLEPJbs9MGvPr-jQuymHGikuVYecv6o6VH0RU&_nc_zt=23&_nc_ht=scontent.fgyd14-1.fna&_nc_gid=t9ewsZWDrHnF5xj_T72mGg&oh=00_AfW-46OmRfbb4IAWrOg5PsZ1wclwP3GCPx0qrrKvdIjOFw&oe=68BA82C4" alt="Server" />
+  </div>
+     <div class="service-box">
+    <div class="service-text">  Veb saytlarının və korporativ elektron poçt sisteminin yaradılması</div>
+    <img class="service-image" src="https://scontent.fgyd14-1.fna.fbcdn.net/v/t1.6435-9/180877591_944125766418307_4860066359691562033_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=ZYIqdO07sdcQ7kNvwG22Bxz&_nc_oc=AdkMFUII2-YHUnIOSpu2wTnzoENL8KN88SDYvhefnlYEhisponI1XCSHPl27bwa5Uug&_nc_zt=23&_nc_ht=scontent.fgyd14-1.fna&_nc_gid=t_sVxS3W7SziiWywVtTRfw&oh=00_AfV4rNAdoUxBQO4SYqBaIyOjnffApPsp0ZUqPk0X00oDjg&oe=68BA6AC2" alt="Server" />
+  </div>
+     <div class="service-box">
+    <div class="service-text"> Soft-Proqram təminatlarının yaradılması, o cümlədən Elektron Sənəd İdarəetmə Sistemi (ESİS) və Elektron arxiv idarəetmə sistemi (EAİS) tətbiq edilməsi</div>
+    <img class="service-image" src="https://scontent.fgyd14-1.fna.fbcdn.net/v/t1.6435-9/182630270_946064396224444_2222576202406922877_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=yZb-qr4cLekQ7kNvwEBzlfp&_nc_oc=Adlum7-Ja11pSIhV7kAN1v2lWZiSY0ST1jdoWnTI2HLx1FVEsscobwxjf28XFHG4rlU&_nc_zt=23&_nc_ht=scontent.fgyd14-1.fna&_nc_gid=jQNSQXriVsph2pH-TtO2bA&oh=00_AfVIlmi9zy6QSPRK4NHGLoN33lR7K2Tj017065iJ3Vuelg&oe=68BA8A83" alt="Server" />
+  </div>
+
+</div>
+  <div class="section-frame">
+   <div class="contact-text">
+      <div style="padding: 10px; border-radius: 5px; color: rgb(0, 0, 0);">
+        © 2025 Copyright FLEX LLC
+      </div>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/company/flex-mmc/?viewAsMember=true" target="_blank">
+        <img src="logo/vecteezy_linkedin-logo-png-linkedin-icon-transparent-png_18930585_835.png" alt="Linkedin" />
+      </a>
+      <a href="https://www.facebook.com/FLEX.LLC/" target="_blank">
+        <img src="logo/59439.png" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/flex_llc/" target="_blank">
+        <img src="logo/transparent-instagram-logo-image-black-background-white-square-no-1710926252702.webp" alt="İnstagram" />
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

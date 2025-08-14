@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flex LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: serif;
+      text-decoration: white;
+      font-size: 16px;
+      background-image: url('background.jpg.jpg'); 
+      background-size: cover;    
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; 
+      line-height: 1.6;
+    }
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: rgb(244, 241, 241);
+      flex-wrap: wrap;
+    }
+
+    .left-block {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .logo img {
+      width: 150px;
+      height: auto;
+    }
+
+    .marquee-container {
+      overflow: hidden;
+      max-width: 400px;
+    }
+
+    marquee {
+      font-size: 28px;
+      color: #333;
+      white-space: nowrap;
+      padding: 10px 0;
+    }
+
+    .main-menu {
+      display: flex;
+      gap: 90px;
+      margin-left: 50px;
+    }
+
+    .main-menu a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+    }
+
+    .main-menu a:hover {
+      color: rgb(137, 220, 244);
+    }
+
+    .menu-button {
+      font-size: 25px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      top: 1px;
+      right: 20px;
+    }
+
+    .dropdown-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      border: 1px solid #d8cccc;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      z-index: 1000;
+    }
+
+    .dropdown-menu.show {
+      display: flex;
+    }
+
+    .dropdown-menu a {
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      color: rgb(255, 255, 255);
+      margin: 20px;
+    }
+
+    p {
+      font-family: serif;
+      font-size: 25px;
+      padding: 0 20px 40px;
+      color: white;
+      line-height: 1.8;
+      text-align: left;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+    .content-section {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 40px;
+      color: white;
+      flex-wrap: wrap;
+    }
+
+    .text-block {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .image-block {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-block img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .section-frame {
+      width: 100%;
+      background-color: rgb(244, 241, 241);
+      height: 250px;
+      margin-top: 10px;
+      padding: 20px 40px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; 
+    }
+
+    .contact-text {
+      font-family: 'Arial', sans-serif;
+      font-size: 17px;
+      color: black;
+      text-align: end;
+      margin-top: 135px;
+      line-height: 1.5;
+      max-width: 70%; 
+    }
+
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px; 
+    }
+
+    .social-icons a img {
+      width: 40px; 
+      height: 40px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .social-icons a img:hover {
+      transform: scale(1.1);
+    }
+
+    .haqqimizda-block {
+      display: none; 
+    }
+
+    /* --- Адаптив для мобильных --- */
+    @media screen and (max-width: 900px) {
+      .content-section {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .text-block, .image-block {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+
+      .section-frame {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 20px;
+      }
+
+      .contact-text {
+        text-align: center;
+        max-width: 100%;
+        margin-top: 0;
+      }
+
+      .social-icons {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .social-icons a img {
+        width: 35px;
+        height: 35px;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .main-menu {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-left: 0;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="left-block">
+      <div class="logo">
+        <a href="firstproject.html">
+          <img src="c:\Users\99455\Downloads\6b089827-427d-4a22-952a-175260614c5d-removebg-preview.png" />
+        </a>
+      </div>
+      <div class="marquee-container">
+        <marquee behavior="scroll" direction="right" scrollamount="5">
+          Bizim fərqliliyimiz sizin inkişafınızdır!
+        </marquee>
+      </div>
+    </div>
+
+    <div class="main-menu">
+      <a href="anasehife.html">Ana səhifə</a>
+      <a href="haqqimizda.html">Haqqımızda</a>
+      <a href="xidmetler.html">Xidmətlər</a>
+      <a href="terefdashlar.html">Tərəfdaşlar</a>
+      <a href="elaqe.html">Əlaqə</a>
+    </div>
+
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+    <div class="dropdown-menu" id="menu">
+      <a href="haqqimizda.html">Haqqımızda</a>
+      <a href="xidmetler.html">Xidmətlər</a>
+      <a href="terefdashlar.html">Tərəfdaşlar</a>
+      <a href="musteriler.html">Müştərilər</a>
+      <a href="lahiyeler.html">Lahiyələr</a>
+      <a href="elaqe.html">Əlaqə</a>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="text-block">
+      <h1>KHAN Lounge and Restaurant</h1>
+      <p>KHAN Restoranının öz müştərilərinə yüksək səviyyəli xidmətlərin təqdim olunması məqsədi ilə müasir texnologiyalara əsaslanan İT və sistem inteqrasiyası həlləri həyata keçirilmişdir...</p>
+      <p>• Video Kamera (CCTV) müşahidə sistemi: Təhlükəsizlik səviyyəsini artırmaq üçün videomüşahidə kameraları və real vaxt rejimində nəzarət sistemləri quraşdırılmışdır.</p>
+      <p>• AUDİO səs sistemi: Müasir və yüksək keyfiyyətli audio səs sistemi istehsalçısı olan markaların qurğu və avadanlıqları ilə musiqisevərləri belə məmnun edən akustika sistemi qurulmuşdur.</p>
+      <p>• İnternet sistemi: Müştərilərə yüksək səviyyəli xidmət göstərilməsi üçün dayanıqlı və davamlı internet paylanması məqsədi ilə xüsusi internet paylayıcı qurğular quraşdırılmışdır.</p>
+      <p>• Giriş-çıxış nəzarət sistemi: İşçilərin davamiyyətinə nəzarət üçün biometric üz tanıma avadanlığı quraşdırılmış və inteqrasiya edilmişdir.</p>
+      <p>• Təchizatın quraşdırılması: İT avadanlıqlarının fiziki qurulumu və sistemə inteqrasiyası həyata keçirilmişdir.</p>
+      <p>• Strukturlaşdırılmış kabel sistemi (Low Voltage): Sabit və etibarlı bağlantı təmin etmək üçün strukturlaşdırılmış kabel infrastrukturu qurulmuşdur.</p>
+      <p>• Şəbəkə infrastrukturu: Lokal (LAN) və geniş (WAN) şəbəkə bağlantılarının optimallaşdırılması, təhlükəsiz və dayanıqlı bağlantının təmin edilməsi həyata keçirilmişdir.</p>
+      <p>Layihənin nəticəsi: KHAN Lounge and Restauranında quraşdırılmış və inteqrasiya edilərək tətbiq olunan bütün sistemlər uğurla istismara verilmişdir.</p>
+    </div>
+    <div class="image-block">
+      <img src="c:\Users\99455\OneDrive\Рабочий стол\logo\summer-terrace-at-khan.jpg" alt="Texniki layihə" />
+    </div>
+  </div>
+
+  <div class="section-frame">
+    <div class="contact-text">
+      <div style="padding: 10px; border-radius: 5px; color: rgb(0, 0, 0);">
+        © 2025 Copyright FLEX LLC
+      </div>
+    </div>
+
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/company/flex-mmc/?viewAsMember=true" target="_blank">
+        <img src="logo/vecteezy_linkedin-logo-png-linkedin-icon-transparent-png_18930585_835.png" alt="Linkedin" />
+      </a>
+      <a href="https://www.facebook.com/FLEX.LLC/" target="_blank">
+        <img src="logo/59439.png" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/flex_llc/" target="_blank">
+        <img src="logo/transparent-instagram-logo-image-black-background-white-square-no-1710926252702.webp" alt="Instagram" />
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
